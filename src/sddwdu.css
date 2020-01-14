@@ -1,0 +1,13 @@
+.sddwdu_drop_placeholder {
+    border: 1px solid orange;
+    background-color: yellow;
+    height: 10px;
+}
+.sddwdu_drag_placeholder {
+    min-height: 50px;
+    min-width: 50px;
+    filter: alpha(opacity=0.5);
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+}

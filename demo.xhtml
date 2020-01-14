@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO supply a title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="src/sddwdu.css"></link>
+    <script src="src/sddwdu.js"></script>
+    <style>
+        .dropArea1 {
+            position: absolute;
+            left: 200px;
+            top: 50px;
+            width: 300px;
+            height: 500px;
+            background-color: silver;
+        }
+        .dropArea2 {
+            position: absolute;
+            left: 600px;
+            top: 50px;
+            width: 300px;
+            height: 500px;
+            border: 1px solid silver;
+        }
+        .menu {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+            width: 100px;
+            border-right: 1px solid silver;
+            background-color: rgb(100,100,100);
+            padding: 10px;
+        }
+        .sddwdu_item {
+            width:100px;
+            height:100px;
+            border: 1px solid silver;
+            background-color: rgb(200,200,200);
+        }
+        .sddwdu_object {
+            height: 50px;
+            background-color: grey;
+            border: 1px solid blue;
+        }
+        #logOutput {
+            position: absolute;
+            height: 300px;
+            overflow: auto;
+            width: 300px;
+            right: 0px;
+            bottom: 0px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="menu">
+        <div class="sddwdu_item sddwdu_item_panel">Panel</div>
+        <div class="sddwdu_item sddwdu_item_split">Split</div>
+        <div class="sddwdu_item sddwdu_item_grid">Grid</div>
+    </div>
+    
+    <div class="dropArea1 sddwdu_area sddwdu_area_left">
+        <div class="sddwdu_object sddwdu_object_1">testing1</div>
+        <div class="sddwdu_object sddwdu_object_2">testing2</div>
+        <div class="sddwdu_object sddwdu_object_3">asdf testing3</div>
+    </div>
+    
+    <div class="dropArea2 sddwdu_area sddwdu_area_right"></div>
+    
+    <div id="logOutput"></div>
+    
+    <script>
+    sddwdu.attach({
+        items : "sddwdu_item",
+        areas : "sddwdu_area",
+        objects : "sddwdu_object",
+        drop : function (item,area,position) {
+            sddwdu.dropItemToObject(item,area,position);
+        },
+        sort : function (object,area,position) {
+            sddwdu.moveObjectToArea(object,area,position);
+        }
+    });
+    </script>
+    
+</body>
+</html>
